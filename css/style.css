@@ -8,12 +8,122 @@
 
 /* Tipografía */
 @font-face {
-  font-family: "";
-  src: url("") format("woff2"), url("") format("woff");
+  font-family: "montserratRegular";
+  src: url("../font/montserratalternates-regular.woff2") format("woff2"),
+    url("../font/montserratalternates-regular.woff") format("woff");
 }
+
+@font-face {
+  font-family: "montserratBold";
+  src: url("../font/montserratalternates-bold.woff2") format("woff2"),
+    url("../font/montserratalternates-bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "montserratItalic";
+  src: url("../font/montserratalternates-italic.woff2") format("woff2"),
+    url("../font/montserratalternates-italic.woff") format("woff");
+}
+
+/* ******************************** */
+
+
+
+/* ******************************** */
 
 /* ******************************** */
 
 /* Colores */
 
 /* ******************************** */
+
+/* HEADER */
+  /* CARRUSEL */
+  .main__carrusel{
+    display: none;
+  }
+/* NAV */
+nav.menu-principal {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  
+  & .menu-principal__logo-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+}
+
+
+  
+  
+  
+  /* MQ */
+  /* IPAD */
+  @media screen and (min-width: 48rem) and (orientation: portrait) {
+    nav.menu-principal {
+      height: revert;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: start;
+      
+      & .menu-principal__logo-link {
+        
+
+      }
+      
+      & .menu-principal__parrafo{
+        flex-basis: 25rem;
+        background: url(/svg/logoFondo.svg) no-repeat center center;
+        background-size: 85% 85%;
+        text-align: justify;
+        
+      }
+    }
+    
+  }
+  
+  
+  /* DESKTOP */
+  /*  */
+  @media screen and (min-width: 64rem) {
+    
+    header, .main__texto {
+      max-width: 85.375rem;
+      margin: 0 auto;
+      
+    }
+    
+    nav.menu-principal {
+      height: revert;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: row;
+    
+    
+    & .menu-principal__logo-link {
+      display: flex;
+      flex-direction: row-reverse;
+      
+      & .menu-principal__logo{
+        display: initial;
+      }
+    }
+    & .menu-principal__parrafo{
+      width: 40%;
+      order: 1;
+    }
+  }
+  /* CARRUSEL */
+  .main__carrusel{
+    display: revert;
+    display: flex;
+    justify-content: space-between;
+  }
+}
